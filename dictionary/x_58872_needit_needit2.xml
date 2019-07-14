@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" extends="task" label="NeedIt2" max_length="40" name="x_58872_needit_needit2" type="collection">
+    <element audit="true" extends="task" label="NeedIt2" max_length="40" name="x_58872_needit_needit2" sizeclass="2" type="collection">
         <element choice="3" default="facilities" label="Request type" mandatory="true" max_length="100" name="request_type" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Facilities" value="facilities"/>
-                <element inactive_on_update="false" label="Human Resources" value="hr"/>
-                <element inactive_on_update="false" label="Legal" value="legal"/>
-                <element inactive_on_update="false" label="Your Department Choice" value="your _choice"/>
+                <element inactive_on_update="false" label="Facilities" sequence="0" value="facilities"/>
+                <element inactive="true" inactive_on_update="true" label="Your Department Choice" sequence="0" value="your _choice"/>
+                <element inactive_on_update="false" label="Human Resources" sequence="1" value="hr"/>
+                <element inactive_on_update="false" label="Legal" sequence="2" value="legal"/>
+                <element inactive_on_update="false" label="Other" sequence="3" value="other"/>
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Additional Comments" max_length="1000" name="u_additional_comments" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Others" max_length="40" name="u_others" type="string"/>
         <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
         <element choice="3" default="hr1" label="What needed" mandatory="true" max_length="100" name="what_needed" type="choice">
             <choice>
@@ -20,6 +22,7 @@
                 <element inactive_on_update="false" label="Legal 2" sequence="5" value="legal2"/>
                 <element inactive_on_update="false" label="Your Department Choice 1" sequence="6" value="your_choice1"/>
                 <element inactive_on_update="false" label="Your Department Choice 2" sequence="7" value="your_choice2"/>
+                <element inactive_on_update="false" label="Other" sequence="8" value="other"/>
             </choice>
         </element>
     </element>
